@@ -1,3 +1,4 @@
+import "./Add.css";
 import React, { useState } from "react";
 import ResultCard from "../ResultCard/ResultCard";
 
