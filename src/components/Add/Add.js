@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Add = () => {
+export default function Add() {
   return (
     <div>
-      <h1>Watched Page</h1>
+      <h1>Add</h1>
     </div>
   );
-};
+}
