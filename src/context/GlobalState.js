@@ -8,8 +8,15 @@ import AppReducer from "./AppReducer";
 
 // initiall state
 const initialState = {
-  watchlist: [],
-  Watched: [],
+  watchlist: localStorage.getItem("watchlist")
+    ? JSON.parse(localStorage.getItem("watchlist"))
+    : [],
+  // watched: localStorage.getItem("watched")
+  //   ? JSON.parse(localStorage.getItem("watched"))
+  //   : [],
+  watched: localStorage.getItem("watched")
+    ? JSON.parse(localStorage.getItem("watched"))
+    : [],
 };
 
 // create context
@@ -18,6 +25,11 @@ export const GlobalContext = createContext(initialState);
 // provider component
 export function GlobalProvider(props) {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem("watchlist", JSON.stringify(state.watchlist));
+    localStorage.setItem("watched", JSON.stringify(state.watched));
+  }, [state]);
 
   // actions
   function addMovieToWatchlist(movie) {
