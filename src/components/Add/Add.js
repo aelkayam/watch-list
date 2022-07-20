@@ -35,7 +35,7 @@ export default function Add() {
             />
           </div>
           {results.length > 0 && (
-            <ul>
+            <ul className="results">
               {results.map((movie) => (
                 <li key={movie.id}>
                   <ResultCard movie={movie} />

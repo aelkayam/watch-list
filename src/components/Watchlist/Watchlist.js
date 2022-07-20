@@ -20,7 +20,7 @@ export default function Watchlist() {
             ))}
           </div>
         ) : (
-          <h2 className="no-movies">Your list is empty</h2>
+          <h3 className="no-movies">Your Watchlist is empty!</h3>
         )}
       </div>
     </div>

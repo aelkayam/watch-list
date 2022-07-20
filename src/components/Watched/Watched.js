@@ -20,7 +20,7 @@ export default function Watched() {
             ))}
           </div>
         ) : (
-          <h2 className="no-movies">Haven't watched anything yet...</h2>
+          <h3 className="no-movies">Your Watched list is empty!</h3>
         )}
       </div>
     </div>

@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap');
 
 :root {
   --primary: #032541;
   --secondary: #21d07a;
-  --white: #fff;
+  --white: white;
 }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Rubik', sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -174,6 +176,7 @@ input:focus {
 
 .movie-page .no-movies {
   color: #c4c4c4;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+  font-weight: 300;
   text-align: center;
 }
