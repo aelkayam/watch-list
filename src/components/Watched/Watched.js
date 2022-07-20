@@ -9,6 +9,9 @@ export default function Watched() {
       <div className="container">
         <div className="header">
           <h1 className="heading">Watched Movies</h1>
+          <span className="count-pill">
+            {watched.length} {watched.length === 1 ? "Movie" : "Movies"}
+          </span>
         </div>
         {watched.length > 0 ? (
           <div className="movie-grid">
