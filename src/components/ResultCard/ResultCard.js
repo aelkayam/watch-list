@@ -17,7 +17,7 @@ export default function ResultCard({ movie }) {
       <div className="poster-wrapper">
         {movie.poster_path ? (
           <img
-            src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
             alt={`${movie.title} Poster`}
           />
         ) : (
@@ -29,6 +29,11 @@ export default function ResultCard({ movie }) {
           <h3 className="title">{movie.title}</h3>
           <h4 className="release-date">
             {movie.release_date ? movie.release_date.substring(0, 4) : "-"}
+          </h4>
+          <h4 className="reviews">
+            {movie.vote_average > 0
+              ? "user reviews: " + movie.vote_average + "/10"
+              : "no reviews"}
           </h4>
         </div>
         <div className="controls">
