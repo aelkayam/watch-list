@@ -3,6 +3,13 @@ header {
   background-color: var(--primary);
 }
 
+/* header .header-logo{
+  margin: 0;
+  width: 30px;
+  margin-right: auto;
+  margin-left: 15px;
+} */
+
 header .inner-content {
   display: flex;
   justify-content: space-between;

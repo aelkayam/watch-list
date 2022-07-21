@@ -17,7 +17,7 @@ export default function ResultCard({ movie }) {
       <div className="poster-wrapper">
         {movie.poster_path ? (
           <img
-            src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
             alt={`${movie.title} Poster`}
           />
         ) : (

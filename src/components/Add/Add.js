@@ -9,12 +9,10 @@ export default function Add() {
   function inputChange(e) {
     e.preventDefault();
     setQuery(e.target.value);
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
-    ).then((res) =>
+    fetch("http://localhost:5000/one-piece-data").then((res) =>
       res.json().then((data) => {
         if (!data.errors) {
-          setResults(data.results);
+          setResults(data);
         } else {
           setResults([]);
         }

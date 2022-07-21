@@ -1,6 +1,7 @@
 import "./Header.css";
 import React from "react";
 import { Link } from "react-router-dom";
+// import icon from "../../images/ghibli-icon.png";
 
 export default function Header() {
   return (
@@ -10,6 +11,7 @@ export default function Header() {
           <div className="brand">
             <Link to="/">WatchList</Link>
           </div>
+          {/* <img className="header-logo" src={icon} alt="ghibli-icon" /> */}
 
           <ul className="nav-links">
             <li>
