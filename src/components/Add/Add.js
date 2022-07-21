@@ -1,18 +1,35 @@
 import "./Add.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ResultCard from "../ResultCard/ResultCard";
 
 export default function Add() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
+  // load all movies:
+  useEffect(() => {
+    fetch("http://localhost:5000/one-piece-data").then((res) =>
+      res.json().then((data) => {
+        console.log(data);
+        if (!data.errors) {
+          setResults(data);
+        } else {
+          setResults([]);
+        }
+      })
+    );
+  }, []);
+
+  // filter by title:
   function inputChange(e) {
     e.preventDefault();
     setQuery(e.target.value);
     fetch("http://localhost:5000/one-piece-data").then((res) =>
       res.json().then((data) => {
         if (!data.errors) {
-          setResults(data);
+          setResults(() =>
+            data.filter((movie) => movie.title.toLowerCase().includes(query))
+          );
         } else {
           setResults([]);
         }
