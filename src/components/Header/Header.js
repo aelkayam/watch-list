@@ -13,7 +13,7 @@ export default function Header() {
             <Link to="/">WatchList</Link>
           </div>
 
-          <div className="button">Change Background</div>
+          {/* <div className="button">Change Background</div> */}
 
           <ul className="nav-links">
             <li>
