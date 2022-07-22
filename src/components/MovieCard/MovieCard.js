@@ -5,15 +5,9 @@ export default function MovieCard({ movie, type }) {
   return (
     <div className="movie-card" key={movie.key}>
       <div className="overlay"></div>
-      {movie.poster_path ? (
-        <img
-          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-          alt={`${movie.title} Poster`}
-        />
-      ) : (
-        <div className="filler-poster" />
-      )}
-
+      {<img src={movie.image} alt={`${movie.title} Poster`} />}
+      <h2 className="title">{movie.title}</h2>
+      <div className="description">{movie.description}</div>
       <MovieControls movie={movie} type={type} />
     </div>
   );

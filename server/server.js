@@ -4,7 +4,7 @@ import cors from "cors";
 
 const app = express();
 //const port = process.env.PORT || 5000;
-const port = 5000;
+const port = 3001;
 
 app.use(cors());
 // app.use(json());
@@ -15,8 +15,8 @@ app.use(cors());
 //   res.send({ express: "Hello From Express" });
 // });
 
-app.get("/one-piece-data", (req, res) => {
-  readFile("./one-piece-data.json", "utf8", (err, data) => {
+app.get("/ghibli-data", (req, res) => {
+  readFile("./ghibli-data.json", "utf-8", (err, data) => {
     if (err) throw err;
     const movies = JSON.parse(data);
     res.send(movies);

@@ -15,26 +15,15 @@ export default function ResultCard({ movie }) {
   return (
     <div className="result-card">
       <div className="poster-wrapper">
-        {movie.poster_path ? (
-          <img
-            src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-            alt={`${movie.title} Poster`}
-          />
-        ) : (
-          <div className="filler-poster" />
-        )}
+        {<img src={movie.image} alt={`${movie.title} Poster`} />}
       </div>
       <div className="info">
         <div className="header">
           <h3 className="title">{movie.title}</h3>
           <h4 className="release-date">
-            {movie.release_date ? movie.release_date.substring(0, 4) : "-"}
+            {movie.release_date ? movie.release_date : "-"}
           </h4>
-          <h4 className="reviews">
-            {movie.vote_average > 0
-              ? "user reviews: " + movie.vote_average + "/10"
-              : "no reviews"}
-          </h4>
+          <h4 className="reviews">{"Score: " + movie.rt_score + "%"}</h4>
         </div>
         <div className="controls">
           <button

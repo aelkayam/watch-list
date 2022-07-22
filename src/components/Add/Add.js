@@ -8,9 +8,8 @@ export default function Add() {
 
   // load all movies:
   useEffect(() => {
-    fetch("http://localhost:5000/one-piece-data").then((res) =>
+    fetch("http://localhost:3001/ghibli-data").then((res) =>
       res.json().then((data) => {
-        console.log(data);
         if (!data.errors) {
           setResults(data);
         } else {
@@ -24,11 +23,14 @@ export default function Add() {
   function inputChange(e) {
     e.preventDefault();
     setQuery(e.target.value);
-    fetch("http://localhost:5000/one-piece-data").then((res) =>
+
+    fetch("http://localhost:3001/ghibli-data").then((res) =>
       res.json().then((data) => {
         if (!data.errors) {
           setResults(() =>
-            data.filter((movie) => movie.title.toLowerCase().includes(query))
+            data.filter((movie) =>
+              movie.title.toLowerCase().includes(query.toLowerCase())
+            )
           );
         } else {
           setResults([]);
