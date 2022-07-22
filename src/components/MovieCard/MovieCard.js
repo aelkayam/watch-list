@@ -1,3 +1,4 @@
+import "./MovieCard.css";
 import React from "react";
 import MovieControls from "../MovieControls/MovieControls";
 

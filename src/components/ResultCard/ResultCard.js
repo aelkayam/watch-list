@@ -1,3 +1,4 @@
+import "./ResultCard.css";
 import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 
@@ -9,6 +10,7 @@ export default function ResultCard({ movie }) {
   let storedMovie = watchlist.find((o) => o.id === movie.id);
   let watchedMovie = watched.find((o) => o.id === movie.id);
 
+  // show/hide buttons
   const watchlistDisabled = storedMovie ? true : watchedMovie ? true : false;
   const watchedDisabled = watchedMovie ? true : false;
 
