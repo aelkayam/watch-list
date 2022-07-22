@@ -3,13 +3,6 @@ header {
   background-color: var(--primary);
 }
 
-/* header .header-logo{
-  margin: 0;
-  width: 30px;
-  margin-right: auto;
-  margin-left: 15px;
-} */
-
 header .inner-content {
   display: flex;
   justify-content: space-between;
@@ -31,6 +24,13 @@ header a:hover {
 header .brand a {
   font-weight: 700;
   font-size: 1.5rem;
+  display: inline-flex;
+  margin: 8px;
+}
+
+header .header-logo {
+  height: 38px;
+  float: left;
 }
 
 header .nav-links {
