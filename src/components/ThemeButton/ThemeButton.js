@@ -15,7 +15,7 @@ export default function ThemeButton() {
 
   return (
     <button className="button" onClick={onClick}>
-      {darkMode ? "Switch to bg1" : "Switch to bg2"}
+      {darkMode ? "Switch bg1" : "Switch bg2"}
     </button>
   );
 }
