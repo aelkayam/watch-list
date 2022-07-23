@@ -1,27 +1,34 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
+import { ThemeContext } from "../../context/ThemeContext";
 import MovieCard from "../MovieCard/MovieCard";
 
 export default function Watchlist() {
   const { watchlist } = useContext(GlobalContext);
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
+
   return (
-    <div className="movie-page">
-      <div className="container">
-        <div className="header">
-          <h1 className="heading">My Watchlist</h1>
-          <span className="count-pill">
-            {watchlist.length} {watchlist.length === 1 ? "Movie" : "Movies"}
-          </span>
-        </div>
-        {watchlist.length > 0 ? (
-          <div className="movie-grid">
-            {watchlist.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} type="watchlist" />
-            ))}
+    <div className={`${darkMode ? "dark" : "light"}`}>
+      <div className="movie-page">
+        <div className="container">
+          <div className="header">
+            <h1 className="heading">My Watchlist</h1>
+            <span className="count-pill">
+              {watchlist.length} {watchlist.length === 1 ? "Movie" : "Movies"}
+            </span>
           </div>
-        ) : (
-          <h3 className="no-movies">Your Watchlist is empty!</h3>
-        )}
+          {watchlist.length > 0 ? (
+            <div className="movie-grid">
+              {watchlist.map((movie) => (
+                <MovieCard key={movie.id} movie={movie} type="watchlist" />
+              ))}
+            </div>
+          ) : (
+            <h3 className="no-movies">Your Watchlist is empty!</h3>
+          )}
+        </div>
       </div>
     </div>
   );

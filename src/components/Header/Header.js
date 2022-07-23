@@ -2,6 +2,7 @@ import "./Header.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import icon from "../../images/ghibli-icon.png";
+import ThemeButton from "../ThemeButton/ThemeButton";
 
 export default function Header() {
   return (
@@ -13,7 +14,7 @@ export default function Header() {
             <Link to="/">WatchList</Link>
           </div>
 
-          {/* <div className="button">Change Background</div> */}
+          <ThemeButton />
 
           <ul className="nav-links">
             <li>

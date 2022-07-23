@@ -18,7 +18,7 @@ export default function App() {
         <Routes>
           <Route exact path="/" element={<WatchList />} />
           <Route path="/watched" element={<Watched />} />
-          <Route path="/Add" element={<Add />} />
+          <Route path="/add" element={<Add />} />
         </Routes>
       </Router>
     </GlobalProvider>
