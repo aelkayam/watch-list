@@ -1,5 +1,6 @@
 import "./Home.css";
 import React from "react";
+import Login from "../Login/Login";
 
 export default function Home() {
   return (
@@ -26,6 +27,8 @@ export default function Home() {
             to remove from list
           </li>
         </ul>
+
+        <Login />
       </div>
     </div>
   );
