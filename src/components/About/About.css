@@ -22,9 +22,10 @@ main {
 main .info {
   text-indent: 15px;
   font-weight: 400;
+  padding-inline: 15px;
 }
 
 main .info-logo {
-  width: 80%;
+  width: 40%;
   align-self: center;
 }
