@@ -3,7 +3,7 @@ import { useRef, useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
-  const { username, password } = useContext(AuthContext);
+  const { username, password, logged, login } = useContext(AuthContext);
 
   const userRef = useRef();
   const errRef = useRef();
@@ -11,11 +11,6 @@ const Login = () => {
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    userRef.current.focus();
-  }, []);
 
   useEffect(() => {
     setErrMsg("");
@@ -23,10 +18,9 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(user + " " + pwd);
-    // console.log(username + " " + password);
+    console.log(logged);
     if (user === username && pwd === password) {
-      setSuccess(true);
+      login(true);
       setUser("");
       setPwd("");
     } else {
@@ -36,13 +30,21 @@ const Login = () => {
 
   return (
     <div className="login">
-      {success ? (
+      {logged ? (
         <section>
           <h1>You are logged in!</h1>
           <br />
           <p>
             <a href="/add">Start adding movies!</a>
           </p>
+          <button
+            onClick={() => {
+              login(false);
+              window.location.reload();
+            }}
+          >
+            Logout
+          </button>
         </section>
       ) : (
         <section>
