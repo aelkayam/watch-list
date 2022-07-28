@@ -5,6 +5,15 @@
   margin: 0 auto;
 }
 
+.add-content .sort-wrapper {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.sort-title {
+  margin-right: 12px;
+}
+
 .add-content .input-wrapper input {
   width: 100%;
   background-color: var(--primary);
@@ -61,7 +70,7 @@
   margin: 0;
 }
 
-.result-card .info .reviews{
+.result-card .info .reviews {
   font-size: 0.9rem;
   font-weight: 300;
   color: var(--primary);

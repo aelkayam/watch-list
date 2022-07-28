@@ -25,7 +25,10 @@ export default function ResultCard({ movie }) {
           <h4 className="release-date">
             {movie.release_date ? movie.release_date : "-"}
           </h4>
-          <h4 className="reviews">{"Score: " + movie.rt_score + "%"}</h4>
+          <h4 className="reviews">
+            {"Score: " + movie.rt_score + "%"}
+            {" --- " + movie.running_time + " min"}
+          </h4>
         </div>
         <div className="controls">
           <button
