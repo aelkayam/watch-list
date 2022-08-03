@@ -42,6 +42,19 @@ const reducer = (state, action) => {
         ...state,
         watched: state.watched.filter((movie) => movie.id !== action.payload),
       };
+    // clear all movies from watchlist:
+    case "CLEAR_WATCHLIST":
+      return {
+        ...state,
+        watchlist: [],
+      };
+
+    // clear all movies from watched:
+    case "CLEAR_WATCHED":
+      return {
+        ...state,
+        watched: [],
+      };
     default:
       return state;
   }
