@@ -5,7 +5,7 @@ import { AuthContext } from "../../context/AuthContext";
 import icon from "../../images/ghibli-icon.png";
 
 export default function Header() {
-  const { logged } = useContext(AuthContext);
+  const { logged, username } = useContext(AuthContext);
   return (
     <header>
       <div className="container">
@@ -16,6 +16,11 @@ export default function Header() {
           </div>
 
           <ul className="nav-links">
+            {logged && (
+              <li>
+                <Link to="/settings">{username}</Link>
+              </li>
+            )}
             <li>
               <Link to="/about">About</Link>
             </li>

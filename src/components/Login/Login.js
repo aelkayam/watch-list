@@ -18,7 +18,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(logged);
     if (user === username && pwd === password) {
       login(true);
       setUser("");
